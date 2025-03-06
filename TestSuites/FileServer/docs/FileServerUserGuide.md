@@ -172,11 +172,11 @@ You can execute the Test Suite test cases in either a **WORKGROUP** or **DOMAIN*
   
   Although you can install and run the **Test Suite** components on virtual machines, this User Guide describes the setup of physical machines only.
 
-  * **Driver computer** (Client01) − this machine must be running the [Operating System](https://dotnet.microsoft.com/download/dotnet/5.0/) that can install .NET 5.0. 
+  * **Driver computer** (Client01) − this machine must be running the [Operating System](https://dotnet.microsoft.com/en-us/download) that can install .NET 8.0. 
 
     See section [3.3.1 Driver Computer Minimum Requirements](#3.3.1) for hardware requirements and section [5.1.1 Set up the Driver Computer in the Workgroup Environment](#5.1.1) for setup instructions.
 
-  * **SUT computer** (Node01) − this machine can be for hosting either a Windows or non-Windows implementation. For a Windows implementation, the SUT computer must be running the Microsoft® Windows Server 2012 R2, Standard Edition or later operating system.
+  * **SUT computer** (Node01) − this machine can be for hosting either a Windows or non-Windows implementation. For a Windows implementation, the SUT computer must be running the Microsoft® Windows Server 2016 (version 1607), Standard Edition or later operating system.
 
     See section [3.3.2 System Under Test (SUT) Minimum Requirements](#3.3.2) for hardware requirements and section [5.1.2 Setup the SUT Computer in the Workgroup Environment](#5.1.2) for setup instructions.
 
@@ -190,7 +190,7 @@ You can execute the Test Suite test cases in either a **WORKGROUP** or **DOMAIN*
 
     See section [3.3.3 Domain Controller (DC) Minimum Requirements](#3.3.3) for hardware requirements and section [5.2.1 Set up the Domain Controller for the Domain Environment](#5.2.1) for setup instructions.
 
-  * **Driver computer** (Client01) − this machine must be running the Microsoft® Windows 8.1 Enterprise operating system or later.
+  * **Driver computer** (Client01) − this machine must be running the Microsoft® Windows 10 Enterprise operating system or later.
 
     See section [3.3.1 Driver Computer Minimum Requirements](#3.3.1) for hardware requirements and section [5.2.2 Set up the Driver Computer for the Domain Environment](#5.2.2) for setup instructions.
 
@@ -226,7 +226,7 @@ The minimum requirements for the Driver computer are specified in Table 2 that f
 
 ![](./image/FileServerUserGuide/image1.png)**Note**
 
-The requirements that follow apply only to a Driver computer that has .NET 5.0 installed in the **WORKGROUP** or **DOMAIN** environments.
+The requirements that follow apply only to a Driver computer that has .NET 8.0 installed in the **WORKGROUP** or **DOMAIN** environments.
 
 <a name="table.2"></a>
 
@@ -235,8 +235,8 @@ The requirements that follow apply only to a Driver computer that has .NET 5.0 i
 | Requirement       | Description                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------- |
 | Computer name     | Client01                                                                                            |
-| Operating system  | The [operating system](https://dotnet.microsoft.com/download/dotnet/5.0/) that can install .NET 5.0 |
-| Memory            | 2 GB RAM                                                                                            |
+| Operating system  | The [operating system](https://dotnet.microsoft.com/en-us/download/) that can install .NET 8.0 |
+| Memory            | 4 GB RAM                                                                                            |
 | Disk space        | 60 GB                                                                                               |
 | Network interface | Requires dual network interface cards (NICs)                                                        |
 
@@ -255,7 +255,7 @@ The requirements that follow apply only to Windows-based SUT computers in the te
 | Requirement       | Description                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Computer name     | Node01                                                                                                                                        |
-| Operating system  | Microsoft® Windows Server 2012 R2, Standard Edition or later versions. Note that this computer is **not** set up as a domain controller (DC). |
+| Operating system  | Microsoft® Windows Server 2016 (version 1607), Standard Edition or later versions. Note that this computer is **not** set up as a domain controller (DC). |
 | Features          | N/A                                                                                                                                           |
 | Role Services     | File Server                                                                                                                                   |
 | Memory            | 2 GB RAM                                                                                                                                      |
@@ -269,7 +269,7 @@ The requirements that follow apply only to Windows-based SUT computers in the te
 | Requirement       | Description                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------- |
 | Computer name     | Node01,Node02                                                                            |
-| Operating system  | Microsoft® Windows Server 2012 R2, Standard Edition or later versions.                   |
+| Operating system  | Microsoft® Windows Server 2016 (version 1607), Standard Edition or later versions.                   |
 | Features          | Failover Clustering                                                                      |
 | Role Services     | File Server, DFS Namespaces, File Server Resource Manager, File Server VSS Agent Service |
 | Memory            | 2 GB RAM                                                                                 |
@@ -291,7 +291,7 @@ The requirements that follow apply only to a Windows-based DC in the test enviro
 | Requirement       | Description                                                            |
 | ----------------- | ---------------------------------------------------------------------- |
 | Computer name     | DC01                                                                   |
-| Operating system  | Microsoft® Windows Server 2012 R2, Standard Edition or later versions. |
+| Operating system  | Microsoft® Windows Server 2016 (version 1607), Standard Edition or later versions. |
 | Features          | AD DS Tools, DNS Server Tools                                          |
 | Role Services     | Active Directory Domain Services (AD DS), DNS Server                   |
 | Memory            | 1 GB RAM                                                               |
@@ -313,7 +313,7 @@ The requirements that follow apply only to a Windows-based SAN server in the tes
 | Requirement      | Description                                                            |
 | ---------------- | ---------------------------------------------------------------------- |
 | Computer name    | Storage01                                                              |
-| Operating system | Microsoft® Windows Server 2012 R2, Standard Edition or later versions. |
+| Operating system | Microsoft® Windows Server 2016 (version 1607), Standard Edition or later versions. |
 | Features         | N/A                                                                    |
 | Role Services    | File Server, iSCSI Target Server                                       |
 | Memory           | 1 GB RAM                                                               |
@@ -505,9 +505,9 @@ When setting up the Driver and SUT computers in either the **WORKGROUP** or **DO
 
 The **WORKGROUP** environment consists of two test machines as follows:
 
-* **Driver computer** – must be running the Microsoft® Windows 8.1 Enterprise or later operating system version.
+* **Driver computer** – must be running the Microsoft® Windows 10 Enterprise or later operating system version.
 
-* **SUT computer** – must be running the Microsoft® Windows Server 2012 R2, Standard Edition or later version operating system for implementations in the Windows environment; in non-Windows environments, the operating system running on the SUT computer is at your own discretion, as is the implementation being tested on that computer.
+* **SUT computer** – must be running the Microsoft® Windows Server 2016 (version 1607), Standard Edition or later version operating system for implementations in the Windows environment; in non-Windows environments, the operating system running on the SUT computer is at your own discretion, as is the implementation being tested on that computer.
 
 #### <a name="5.1.1"/> 5.1.1 Set up the Driver Computer for the Workgroup Environment
 
@@ -707,6 +707,74 @@ To enable the Signing feature on the SUT (**Node01**) computer, perform the step
 
       * If you disabled **SigningRequired** on the SUT computer, set the value of the **IsRequireMessageSigning** property to `false` in the specified ptfconfig file.
 
+###### <a name="5.1.2.2.3.7"/> 5.1.2.2.3.7 Create an SMB Compressed Share
+
+This configuration is used to test the **Compression** feature of an **MS-SMB2** protocol implementation. If **Compression** is not supported in your implementation, please ignore this section.
+
+To create a share with compression enabled, perform the steps that follow on the SUT (**Node01**):
+1. Create a shared folder named **SMBCompressed** on %systemdrive% of the SUT (Node01) computer.
+2. Share the **SMBCompressed** folder with **Read/Write** permissions to the local **Administrator** account that you enabled earlier. For Windows and non-Windows platforms, proceed to section [5.3.1 Create a share](#5.3.1) for additional process details.
+3. For Windows platforms enable compression on the share with PowerShell:
+    ```
+    Set-SmbShare -Name "SMBCompressed" -CompressData $true
+    ```
+This will enforce data compression on this share
+
+![](./image/FileServerUserGuide/image1.png)**Note**
+
+SMB Compression is only supported on Windows 10 version 2004 or Windows Server 2022 and later versions.
+
+###### <a name="5.1.2.2.3.8"/> 5.1.2.2.3.8 Configure SMB Over QUIC
+
+This configuration is used to test the **SMB over QUIC** transport feature. If **QUIC** is not supported in your implementation, please ignore this section.
+
+![](./image/FileServerUserGuide/image1.png)**Note**
+
+SMB over QUIC is only supported on Windows Server 2022 **Azure Edition** and later versions.
+
+To configure SMB over QUIC, perform the steps that follow:
+
+1. Start Windows PowerShell with Administrator privileges.
+2. Create a self-signed certificate for the SUT computer:
+
+    ```
+    $sutName = $env:COMPUTERNAME
+    $currCert = New-SelfSignedCertificate -Subject $sutName -FriendlyName "SMB over QUIC for File Servers" -KeyUsageProperty Sign -KeyUsage DigitalSignature -CertStoreLocation Cert:\LocalMachine\My -HashAlgorithm SHA256 -Provider "Microsoft Software Key Storage Provider" -KeyAlgorithm ECDSA_P256 -KeyLength 256 -DnsName @("$sutName.yourdomain.com", $sutName)
+    ```
+    Replace "yourdomain.com" with your actual domain name if in a domain environment.
+3. Map the certificate to the SMB server
+   ```
+    $certThumbprint = $currCert.Thumbprint
+    $subject = $currCert.Subject
+    New-SmbServerCertificateMapping -Name "$sutName.yourdomain.com" -Thumbprint $certThumbprint -StoreName my -Subject $subject
+    ```
+4. Export the certificate to a PFX file and import it to the trusted root store:
+    ```
+    $pfxPwd = Read-Host -AsSecureString "Enter the PFX password:"
+    Export-PfxCertificate -Cert $currCert -FilePath "QUICCert.pfx" -Password $pfxPwd
+    Import-PfxCertificate -FilePath "QUICCert.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $pfxPwd
+    ```
+
+5. Configure SMB server for QUIC:
+    ```
+    # Enable SMB encryption on secure connections
+    Set-SmbServerConfiguration -DisableSmbEncryptionOnSecureConnection $false -Confirm:$false    
+
+    # Enable NamedPipe access on QUIC connections
+    Set-SmbServerConfiguration -RestrictNamedpipeAccessViaQuic $false -Confirm:$false
+    ```
+6. Restart the SMB Server service:
+    ```
+    Restart-Service -Name lanmanserver -Force
+    ```
+
+![](./image/FileServerUserGuide/image1.png)**IMPORTANT**
+
+The same certificate must be trusted on both the SUT and the Driver computers for QUIC connections to work properly. Import the certificate to the Trusted Root store on the Driver computer as well.
+
+
+
+
 ##### <a name="5.1.2.3"/> 5.1.2.3 Setup to test DFSC
 
 This configuration is used to test an implementation of the [**MS-DFSC**] protocol. If the distributed file system (**DFS**) is not supported, please ignore this section.
@@ -783,11 +851,77 @@ The general tasks you will need to perform are outlined in the steps that follow
 
       If **Integrity** is not supported by the file system, please ignore this step.
 
+##### <a name="5.1.2.6.1"/> 5.1.2.6.1 Enable LastAccessTime Update
+
+To ensure proper testing of the [**MS-FSA**] protocol, LastAccessTime updates must be enabled on both NTFS and ReFS volumes. This configuration is important for test cases that verify timestamp behavior.
+
+To enable LastAccessTime updates, perform the steps that follow:
+
+1. Start the command console with Administrator privileges.
+
+2. For NTFS volumes, execute the following registry command:
+    ```
+    reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v NtfsDisableLastAccessUpdate /t REG_DWORD /d 0 /f
+    ```
+
+3. For ReFS volumes, execute the following registry command:
+    ```
+    reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v RefsDisableLastAccessUpd
+    ```
+4. Restart the computer for the changes to take effect
+
+
+##### <a name="5.1.2.6.2"/> 5.1.2.6.2 Set up to test FSA on a FAT32 volume
+
+This configuration is used to test the [**MS-FSA**] protocol on a FAT32 file system.
+
+To create a FAT32 volume for testing, perform the steps that follow:
+1. Open the Command Prompt with Administrator privileges.
+For further details, see section 5.3.25 How to start the command console with Administrator privileges.
+2. Use diskpart.exe to create a new FAT32 volume:
+   ```
+    diskpart
+
+    list disk
+   ```
+   Note the disk number (e.g., 0) of the disk where you want to create the FAT32 volume.
+   ``` 
+   select disk <disk_number>
+   
+   list partition
+   ```
+   Identify an existing partition to shrink or create a new partition.
+3. If creating space by shrinking an existing partition:
+    ```
+    select partition <partition_number>
+    shrink minimum=2048
+    exit
+    ```
+4. If creating a new partition
+   ```
+   create partition logical size=2000
+   select partition <new_partition_number>
+   format fs=FAT32 quick label=FAT32
+   assign letter=J
+   exit
+   ```
+   ![](./image/FileServerUserGuide/image1.png)**Note**   
+   Logical and extended partitions cannot be created on a GPT disk.
+   If operating on a GPT disk replace the first command with:
+   ```
+   create partition primary size=2000
+   ```
+5. Create a share named **SMBFAT32Share** on the newly created FAT32 volume
+6. Share the **SMBFAT32Share** folder with Read/Write permissions to the **Administrator** account.
+For Windows platforms, see section [5.3.1 Create a share](#5.3.1) for additional process details
+7. Follow the steps in section [5.1.2.6 Setup to test the File System Algorithms (FSA)](#5.1.2.6) to create the required folders and files in the SMBFAT32Share folder.
+
+
 ### <a name="5.2"/> 5.2 Domain Environment
 
 The **DOMAIN** environment consists of 4-5 test machines, as described in section [3.2 Environment](#3.2). The following requirements apply to the domain environment:
 
-* The Driver computer must use the Microsoft® Windows 8.1 Enterprise or later version operating system.
+* The Driver computer must use the Microsoft® Windows 10 Enterprise or later version operating system.
 
 * The failover cluster SUT, can be for either a Windows or Non-Windows implementation.
 
