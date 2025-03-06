@@ -36,6 +36,7 @@ if(Test-Path -Path $settingFile)
     $agentPort          = .\Get-Parameter.ps1 $settingFile agentPort
     $agentRemoteClient  = .\Get-Parameter.ps1 $settingFile agentRemoteClient
     $compressionInTC    = .\Get-Parameter.ps1 $settingFile compressionInTC
+    $certPwd            = .\Get-Parameter.ps1 $settingFile userPwdInTC
     .\Set-Parameter.ps1 $settingFile LogFile $logFile "If no log file path specified, this value should be used."
 }
 else
@@ -180,7 +181,7 @@ else
 {
     $certCN = $driverComputerName
 }
-$certPwd = "Password01!"
+
 $certFileName = $driverComputerName
 
 if (Test-Path -Path "$env:HOMEDRIVE\$certFileName.cer")
