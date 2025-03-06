@@ -707,6 +707,7 @@ To enable the Signing feature on the SUT (**Node01**) computer, perform the step
 
       * If you disabled **SigningRequired** on the SUT computer, set the value of the **IsRequireMessageSigning** property to `false` in the specified ptfconfig file.
 
+
 ###### <a name="5.1.2.2.3.7"/> 5.1.2.2.3.7 Create an SMB Compressed Share
 
 This configuration is used to test the **Compression** feature of an **MS-SMB2** protocol implementation. If **Compression** is not supported in your implementation, please ignore this section.
@@ -750,7 +751,7 @@ To configure SMB over QUIC, perform the steps that follow:
     ```
 4. Export the certificate to a PFX file and import it to the trusted root store:
     ```
-    Copy$pfxPwd = ConvertTo-SecureString -String "Password01!" -Force -AsPlainText
+    $pfxPwd = Read-Host -AsSecureString "Enter the PFX password:"
     Export-PfxCertificate -Cert $currCert -FilePath "QUICCert.pfx" -Password $pfxPwd
     Import-PfxCertificate -FilePath "QUICCert.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $pfxPwd
     ```
@@ -771,6 +772,7 @@ To configure SMB over QUIC, perform the steps that follow:
 ![](./image/FileServerUserGuide/image1.png)**IMPORTANT**
 
 The same certificate must be trusted on both the SUT and the Driver computers for QUIC connections to work properly. Import the certificate to the Trusted Root store on the Driver computer as well.
+
 
 
 
