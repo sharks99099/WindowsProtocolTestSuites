@@ -28,6 +28,7 @@ namespace Microsoft.Protocols.TestSuites.FileSharing.FSA.TestSuite
         {
             FileAttributes attributesBeforeFileAccessed;
             FileAttributes attributesAfterFileAccessed;
+
             Algorithm_Noting_FileAccessed(FileType.DataFile, out attributesBeforeFileAccessed, out attributesAfterFileAccessed);
             TestLastAccessTime(attributesBeforeFileAccessed.lastAccessTime, attributesAfterFileAccessed.lastAccessTime);
         }
@@ -43,6 +44,7 @@ namespace Microsoft.Protocols.TestSuites.FileSharing.FSA.TestSuite
         {
             FileAttributes attributesBeforeFileModified;
             FileAttributes attributesAfterFileAccessed;
+
             Algorithm_Noting_FileAccessed(FileType.DirectoryFile, out attributesBeforeFileModified, out attributesAfterFileAccessed);
             TestLastAccessTime(attributesBeforeFileModified.lastAccessTime, attributesAfterFileAccessed.lastAccessTime);
         }
